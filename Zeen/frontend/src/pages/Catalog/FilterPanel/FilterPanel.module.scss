@@ -1,0 +1,76 @@
+@import "../../../styles/mixins.scss";
+.filterPanel {
+  background-color: var(--color-black-100);
+  margin-top: 4rem;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.form {
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: space-between;
+
+  @include responsive-custom(62.5em) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    padding: 2rem;
+  }
+
+  @include responsive("mobile") {
+    grid-template-columns: 1fr;
+  }
+  div {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    input {
+      background-color: var(--color-black-200);
+      border: none;
+      outline: none;
+      padding: 0.5rem;
+      border-radius: 1rem;
+    }
+
+    select {
+      background-color: var(--color-black-200);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      outline: none;
+      border: none;
+
+      &::placeholder {
+        color: #d6d3d1;
+      }
+    }
+  }
+  button {
+    outline: none;
+    border: none;
+    background-color: var(--color-black-700);
+    color: var(--color-black-50);
+    align-self: flex-end;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    cursor: pointer;
+
+    @include responsive("mobile") {
+      grid-column: 1 / span 1;
+      grid-row: 5 / span 1;
+    }
+  }
+}
+
+.priceWrapper {
+  flex-direction: row !important;
+  gap: 5px;
+  justify-content: flex-end;
+
+  @include responsive("mobile") {
+    flex-direction: column !important;
+  }
+}
